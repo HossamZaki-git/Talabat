@@ -28,7 +28,7 @@ The project includes a custom middleware that intercepts unhandled exceptions an
 ### Prerequisites
 Ensure the following are installed:
 - [.NET SDK 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) or SQLite
+- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 - [Redis](https://redis.io/download)
 - [Stripe account](https://dashboard.stripe.com/register) (for test keys)
 - Optional: Visual Studio
