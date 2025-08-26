@@ -44,7 +44,7 @@ Check the following:
      - Put the values of the publishable key and the secret key in the Stripe.Publishablekey & Stripe.Secretkey
      - Assign JWT.Secret to at least 32 characters
 4. **Restore the dependencies** `dotnet restore`
-5. **Now the backend is ready. don't forget to run redis server by ** `redis-server` . You can test it using any API client like Postman.  
+5. **Now the backend is ready. don't forget to run redis server by** `redis-server` . You can test it using any API client like Postman.  
    If you want to integrate it with the frontend to test the payment process, download the Angular project and follow its setup instructions.  
    Then, in the `appsettings.json` file, assign the frontend base URL to `AllowedOrigins.TalabatOrigin` to comply to the CORS policy.
 
