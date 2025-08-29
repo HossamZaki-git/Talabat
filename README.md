@@ -77,6 +77,6 @@ Check the following:
    - Assign the base URL to JWT.Issuer & WebAPIBaseURL
 4. **Restore the dependencies** `dotnet restore`
 5. **Now the backend is ready. Make sure to start the Redis server using** `redis-server` . You can test it using any API client like Postman.  
-   If you want to integrate it with the frontend to test the payment process, download the Angular project and follow its setup instructions.  
+   If you want to integrate it with the frontend to test the payment process, download the Angular project and follow its setup instructions [The Angular Project](https://github.com/HossamZaki-git/Talabat-angular-client-).  
    Then, in the `appsettings.json` file, assign the frontend base URL to `AllowedOrigins.TalabatOrigin` to comply to the CORS policy.
 
