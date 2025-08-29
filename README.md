@@ -41,37 +41,37 @@ Check the following:
    cd Talabat
    ```
 3. **Create an appsettings.json file inside the Talabat.WebAPI project folder:**
-     - Fill the file with the following content
-```json
-{
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  },
-  "AllowedHosts": "*",
-  "ConnectionStrings": {
-    "ConnectionString": "Server = .; Database = Talabat; Trusted_Connection = true; encrypt = true; TrustServerCertificate = true; MultipleActiveResultSets = true;",
-    "IdentityConnection": "Server = .; Database = TalabatIdentity; Trusted_Connection = true; encrypt = true; TrustServerCertificate = true; MultipleActiveResultSets = true;",
-    "redis": "localhost"
-  },
-  "JWT": {
-    "Secret": "",
-    "Issuer": "",
-    "Audience": "API consumer",
-    "Duration": 2
-  },
-  "WebAPIBaseURL": "",
-  "Stripe": {
-    "Publishablekey": "",
-    "Secretkey": ""
-  },
-  "AllowedOrigins": {
-    "TalabatOrigin": ""
-  }
-} 
-```
+   - Fill the file with the following content
+      ```json
+      {
+        "Logging": {
+          "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+          }
+        },
+        "AllowedHosts": "*",
+        "ConnectionStrings": {
+          "ConnectionString": "Server = .; Database = Talabat; Trusted_Connection = true; encrypt = true; TrustServerCertificate = true; MultipleActiveResultSets = true;",
+          "IdentityConnection": "Server = .; Database = TalabatIdentity; Trusted_Connection = true; encrypt = true; TrustServerCertificate = true; MultipleActiveResultSets = true;",
+          "redis": "localhost"
+        },
+        "JWT": {
+          "Secret": "",
+          "Issuer": "",
+          "Audience": "API consumer",
+          "Duration": 2
+        },
+        "WebAPIBaseURL": "",
+        "Stripe": {
+          "Publishablekey": "",
+          "Secretkey": ""
+        },
+        "AllowedOrigins": {
+          "TalabatOrigin": ""
+        }
+      } 
+      ```
    - Put the values of the publishable key and the secret key in the Stripe.Publishablekey & Stripe.Secretkey
    - Assign at least 32 characters to JWT.Secret
    - Assign the base URL to JWT.Issuer & WebAPIBaseURL
