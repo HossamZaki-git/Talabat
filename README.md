@@ -34,7 +34,7 @@ Check the following:
 - Optional: Visual Studio
 
 ### 🔧 Setup Instructions
-1. **Make a stripe user & account**
+1. **Create a Stripe account and obtain your test API keys**
 2. **Clone the repository**
    ```
    git clone https://github.com/HossamZaki-git/Talabat.git
@@ -42,8 +42,8 @@ Check the following:
    ```
 3. **Create an appsettings.json file inside the Talabat.WebAPI project folder:**
      - Fill the file with the following content
-       ```
-       {
+```json
+{
   "Logging": {
     "LogLevel": {
       "Default": "Information",
@@ -62,7 +62,7 @@ Check the following:
     "Audience": "API consumer",
     "Duration": 2
   },
-  "WebAPIBaseURL": "https://localhost:7092/",
+  "WebAPIBaseURL": "",
   "Stripe": {
     "Publishablekey": "",
     "Secretkey": ""
@@ -70,13 +70,13 @@ Check the following:
   "AllowedOrigins": {
     "TalabatOrigin": ""
   }
-}
-       ```
+} 
+```
      - Put the values of the publishable key and the secret key in the Stripe.Publishablekey & Stripe.Secretkey
      - Assign at least 32 characters to JWT.Secret
-     - Assign the base URL to JWT.Issuer 
+     - Assign the base URL to JWT.Issuer & WebAPIBaseURL
 4. **Restore the dependencies** `dotnet restore`
-5. **Now the backend is ready. don't forget to run redis server by** `redis-server` . You can test it using any API client like Postman.  
+5. **Now the backend is ready. Make sure to start the Redis server using** `redis-server` . You can test it using any API client like Postman.  
    If you want to integrate it with the frontend to test the payment process, download the Angular project and follow its setup instructions.  
    Then, in the `appsettings.json` file, assign the frontend base URL to `AllowedOrigins.TalabatOrigin` to comply to the CORS policy.
 
