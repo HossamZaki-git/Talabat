@@ -72,9 +72,9 @@ Check the following:
   }
 } 
 ```
-     - Put the values of the publishable key and the secret key in the Stripe.Publishablekey & Stripe.Secretkey
-     - Assign at least 32 characters to JWT.Secret
-     - Assign the base URL to JWT.Issuer & WebAPIBaseURL
+   - Put the values of the publishable key and the secret key in the Stripe.Publishablekey & Stripe.Secretkey
+   - Assign at least 32 characters to JWT.Secret
+   - Assign the base URL to JWT.Issuer & WebAPIBaseURL
 4. **Restore the dependencies** `dotnet restore`
 5. **Now the backend is ready. Make sure to start the Redis server using** `redis-server` . You can test it using any API client like Postman.  
    If you want to integrate it with the frontend to test the payment process, download the Angular project and follow its setup instructions.  
