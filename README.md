@@ -40,9 +40,41 @@ Check the following:
    git clone https://github.com/HossamZaki-git/Talabat.git
    cd Talabat
    ```
-3. **Fill the appsettings.json file values:**
+3. **Create an appsettings.json file inside the Talabat.WebAPI project folder:**
+     - Fill the file with the following content
+       ```
+       {
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "ConnectionString": "Server = .; Database = Talabat; Trusted_Connection = true; encrypt = true; TrustServerCertificate = true; MultipleActiveResultSets = true;",
+    "IdentityConnection": "Server = .; Database = TalabatIdentity; Trusted_Connection = true; encrypt = true; TrustServerCertificate = true; MultipleActiveResultSets = true;",
+    "redis": "localhost"
+  },
+  "JWT": {
+    "Secret": "",
+    "Issuer": "",
+    "Audience": "API consumer",
+    "Duration": 2
+  },
+  "WebAPIBaseURL": "https://localhost:7092/",
+  "Stripe": {
+    "Publishablekey": "",
+    "Secretkey": ""
+  },
+  "AllowedOrigins": {
+    "TalabatOrigin": ""
+  }
+}
+       ```
      - Put the values of the publishable key and the secret key in the Stripe.Publishablekey & Stripe.Secretkey
-     - Assign JWT.Secret to at least 32 characters
+     - Assign at least 32 characters to JWT.Secret
+     - Assign the base URL to JWT.Issuer 
 4. **Restore the dependencies** `dotnet restore`
 5. **Now the backend is ready. don't forget to run redis server by** `redis-server` . You can test it using any API client like Postman.  
    If you want to integrate it with the frontend to test the payment process, download the Angular project and follow its setup instructions.  
