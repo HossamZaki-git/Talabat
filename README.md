@@ -117,7 +117,7 @@ Check the following:
 6. **Run the web api project first to seed the data. Now the web api project is ready** You can test it using any API client like Postman or the MVC project.  
    If you want to integrate it with the frontend to test the payment process, download the Angular project and follow its setup instructions [The Angular Project](https://github.com/HossamZaki-git/Talabat-angular-client-).  
    Then, in the `appsettings.json` file, assign the frontend base URL to `AllowedOrigins.TalabatOrigin` to comply with the CORS policy.
-7. **Run the MVC admin panel project. **Admin Credentials**  
+7. **Run the MVC admin panel project. Admin Credentials**  
 - Email: `admin000@talabat.com`  
 - Password: `Pa$$w0rd`
 
