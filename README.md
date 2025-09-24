@@ -1,4 +1,4 @@
-# 🛒 Talabat Clone – E-Commerce Web API
+# 🛒 Talabat Clone – Complete E-Commerce Solution (Web API + MVC Admin Panel + Angular Client)
 
 ## 📦 Description  
 A full-stack e-commerce Web application inspired by Talabat's food delivery platform. It includes features such as order management, product catalog browsing, simulated payment workflows and an admin panel for the app's management. Built with **ASP.NET Core**, the project emphasizes clean architecture, modularity, and extensibility.
