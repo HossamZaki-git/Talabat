@@ -1,0 +1,34 @@
+﻿@using Admin_Panel.Utilities
+@model UserCreationVM
+@{
+    Layout = null;
+    SignUp_Partial_VM partialModel = new SignUp_Partial_VM
+    {
+        userCreationVM = Model,
+        ActionName = "Register"
+    };
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>SignUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+<partial name="SignUp_Partial" model="partialModel" />
+
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+<partial name="_ValidationScriptsPartial" />
+</body>
+</html>

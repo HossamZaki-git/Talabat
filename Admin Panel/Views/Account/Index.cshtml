@@ -1,0 +1,168 @@
+﻿@using Admin_Panel.Models.AccountsVMs
+@model LoginVM
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background-color: #f9f9f9;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            transition: box-shadow 0.3s ease;
+        }
+
+            .login-card:hover {
+                box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+            }
+
+        .form-control {
+            border-radius: 8px;
+        }
+
+            .form-control:focus {
+                box-shadow: none;
+                border-color: #0d6efd;
+            }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            font-weight: 500;
+        }
+
+            .btn-primary:hover {
+                background-color: #0b5ed7;
+            }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+            .signup-link a {
+                color: #0d6efd;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+                .signup-link a:hover {
+                    text-decoration: underline;
+                }
+
+        h3 {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .validation-summary-errors {
+            color: #dc3545;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .field-validation-error {
+            color: #dc3545;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    @* The messages sent to the view *@
+    @if (TempData["Message"] is not null)
+    {
+        <!-- Toast container -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast align-items-center text-bg-@TempData["MessageColor"] border-0"
+                 role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        @TempData["Message"]
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                            data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const toastEl = document.getElementById('liveToast');
+              const toast = new bootstrap.Toast(toastEl, { delay: 5000 }); // auto-hide after 5s
+              toast.show();
+            });
+        </script>
+    }
+    <div class="login-card">
+        <h3 class="text-center mb-4">Welcome Back</h3>
+
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="All" class="validation-summary-errors"></div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email address</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" class="form-control" type="password"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="rememberMe" name="RememberMe" asp-for="RememberTheLogin" />
+                <label class="form-check-label" for="rememberMe">Remember Me</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Sign In</button>
+
+            <div class="signup-link">
+                <p>Don't have an account? <a asp-action="Register">Sign Up</a></p>
+            </div>
+
+            <div class="alert alert-info mt-4" role="alert">
+                <strong>Demo Admin</strong>
+                <button class="btn btn-sm btn-outline-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#adminCreds">
+                    Show Admin Credentials
+                </button>
+                <div class="collapse mt-2 fw-bold" id="adminCreds">
+                    <p class="mb-0">Email: <code>admin000@talabat.com</code></p>
+                    <p class="mb-0">Password: <code>Pa$$w0rd</code></p>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>

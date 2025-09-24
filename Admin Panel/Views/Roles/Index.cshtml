@@ -1,0 +1,57 @@
+﻿@{
+    @model RolesVM
+    ViewData["Title"] = "Roles";
+    MainVM mainVM = new MainVM
+    {
+        Mode = "Role",
+        ControllerName = "Roles",
+        ActionName = "DeleteRole",
+        ParameterName = "RoleName"
+    };
+}
+
+@{
+    if(Model.Roles_NumberOfMembers.Count != 0)
+    {
+        <table class="table table-striped m-5 text-center">
+        <thead>
+            <th>Role Name</th>
+            <th>Number of members</th>
+            <th colspan="2">Actions</th>
+        </thead>
+        <tbody>
+                @{
+                    foreach(var role_nMembers in Model.Roles_NumberOfMembers)
+                    {
+                        <tr>
+                            <td>@role_nMembers.Key</td>
+                            <td>@role_nMembers.Value</td>
+                            <td><a class="btn btn-warning" asp-action="EditRole" asp-route-roleName = "@role_nMembers.Key"><i class="fa-solid fa-pen-to-square me-1"></i>Edit Name</a></td>
+                            
+                            <td>
+                                    <button class="btn btn-danger" onclick="DeleteConfirmation('@role_nMembers.Key')"><i class="fa-solid fa-trash me-1"></i>Delete</button>
+                            </td>
+                        </tr>
+                    }
+            }
+        </tbody>
+        </table>
+        <div class="w-100 d-flex justify-content-center align-items-center">
+        <a class="btn btn-info" asp-action ="RoleCreation">Add New Role</a>
+        </div>
+    }
+    else
+    {
+        <div class="d-flex justify-content-center align-items-center min-vh-100 bg-light text-dark">
+            <div class="card shadow-lg p-4 text-center" style="width: 350px;">
+                <div class="card-body">
+                    <h5 class="card-title mb-3 fs-4">No Roles Found</h5>
+                    <p class="text-muted">There are currently no role records available.</p>
+                    <a asp-action="RoleCreation" class="btn btn-primary w-75">Create Role</a>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+<partial name="Main_partial" model="mainVM" />

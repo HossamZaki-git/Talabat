@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Talabat.Core;
+using Talabat.Repository;
 using Talabat.Repository.Data;
 using Talabat.Repository.Identity;
 using Talabat.WebAPI.Extensions;
@@ -25,7 +27,14 @@ namespace Admin_Panel
                 options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
             });
 
+            builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+
             builder.Services.AddIdentityServices();
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Account/Index";
+            });
+
 
             var app = builder.Build();
 
@@ -42,6 +51,7 @@ namespace Admin_Panel
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

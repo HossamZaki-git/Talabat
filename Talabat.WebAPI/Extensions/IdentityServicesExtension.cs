@@ -9,7 +9,8 @@ namespace Talabat.WebAPI.Extensions
         public static IServiceCollection AddIdentityServices(this IServiceCollection Services)
         {
             Services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationIdentityContext>();
+                .AddEntityFrameworkStores<ApplicationIdentityContext>()
+                .AddDefaultTokenProviders();
 
             return Services;
         }

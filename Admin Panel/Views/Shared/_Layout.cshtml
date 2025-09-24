@@ -9,32 +9,48 @@
     <link rel="stylesheet" href="~/Admin_Panel.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css"/>
     <link rel = "stylesheet" href="~/css/Navbar.css"/>
+    <style>
+        .user-info-box {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .username {
+            font-weight: 600;
+            color: #343a40;
+        }
+
+        .logout-link {
+            text-decoration: none;
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+            .logout-link:hover {
+                text-decoration: underline;
+            }
+    </style>
 </head>
 <body>
-    @* <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Admin_Panel</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header> *@
+   
+    <div class="user-info-box">
+            <span class="username">👤 @User.Identity.Name</span>
+        <a class="logout-link" asp-area="" asp-controller="Account" asp-action="SignOut">SignOut</a>
+    </div>
 
     <nav>
         <ul>
+            <a asp-controller="Home" asp-action="Index">
             <li>
                 <div class="home-icon">
                     <div class="roof">
@@ -43,17 +59,20 @@
                     <div class="front"></div>
                 </div>
             </li>
-            <li>
+            </a>
+            
+            <li onclick="window.location.href='/Roles/Index';">
                 <div class="about-icon">
                     <i class="fa-solid fa-elevator h-100" style="width:50%;"></i>
                 </div>
             </li>
-            <li>
+
+            <li onclick="window.location.href='/Users/Index';">
                 <div class="work-icon">
                     <i class="fa-solid fa-users h-100" style="width:50%;"></i>
                 </div>
             </li>
-            <li>
+            <li onclick="window.location.href='/Products/Index';">
                 <div class="mail-icon">
                     <i class="fa-solid fa-shop h-100" style="width:50%;"></i>
                 </div>

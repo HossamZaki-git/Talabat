@@ -1,0 +1,99 @@
+﻿@using Admin_Panel.Utilities
+@model UserCreationVM
+@{
+    SignUp_Partial_VM partialModel = new SignUp_Partial_VM
+            {
+                userCreationVM = Model,
+                ActionName = "UserCreation"
+            };
+}
+
+<partial name="SignUp_Partial" model="partialModel"/>
+
+@* <form class="d-flex justify-content-center align-items-center min-vh-100 bg-light text-dark"
+      asp-action="UserCreation" method="post">
+    <div class="card shadow-lg p-4" style="width: 400px;">
+        <div class="card-header bg-primary text-white text-center">
+            <h4 class="mb-0">Create New User</h4>
+        </div>
+        <div class="card-body">
+
+            <!-- First Name -->
+            <div class="mb-3">
+                <label asp-for="FirstName" class="form-label fw-bold"></label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    <input class="form-control" placeholder="Enter first name" asp-for="FirstName" />
+                </div>
+                <span asp-validation-for="FirstName" class="text-danger fw-bold"></span>
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-3">
+                <label asp-for="LastName" class="form-label fw-bold"></label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    <input class="form-control" placeholder="Enter last name" asp-for="LastName" />
+                </div>
+                <span asp-validation-for="LastName" class="text-danger fw-bold"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label fw-bold"></label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                    <input class="form-control" placeholder="Enter email" asp-for="Email" />
+                </div>
+                <span asp-validation-for="Email" class="text-danger fw-bold"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label fw-bold"></label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" placeholder="Enter password" asp-for="Password" />
+                </div>
+                <span asp-validation-for="Password" class="text-danger fw-bold"></span>
+            </div>
+
+
+            <!-- Street -->
+            <div class="mb-3">
+                <label asp-for="Street" class="form-label fw-bold"></label>
+                <input class="form-control" placeholder="Street" asp-for="Street" />
+                <span asp-validation-for="Street" class="text-danger fw-bold"></span>
+            </div>
+
+            <!-- City -->
+            <div class="mb-3">
+                <label asp-for="City" class="form-label fw-bold"></label>
+                <input class="form-control" placeholder="City" asp-for="City" />
+                <span asp-validation-for="City" class="text-danger fw-bold"></span>
+            </div>
+
+            <!-- Country -->
+            <div class="mb-3">
+                <label asp-for="Country" class="form-label fw-bold"></label>
+                <input class="form-control" placeholder="Country" asp-for="Country" />
+                <span asp-validation-for="Country" class="text-danger fw-bold"></span>
+            </div>
+
+            <!-- Validation Summary -->
+            <div asp-validation-summary="All" class="text-danger fw-bold mb-3"></div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+                <button class="btn btn-success btn-lg">
+                    <i class="fa fa-plus-circle me-2"></i>Create User
+                </button>
+            </div>
+        </div>
+    </div>
+</form> *@
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

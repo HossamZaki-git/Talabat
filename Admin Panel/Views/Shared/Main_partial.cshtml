@@ -1,0 +1,68 @@
+﻿@model MainVM
+
+@* The messages sent to the view *@
+@if (TempData["Message"] is not null)
+{
+    <!-- Toast container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast align-items-center text-bg-@TempData["MessageColor"] border-0"
+             role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    @TempData["Message"]
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const toastEl = document.getElementById('liveToast');
+              const toast = new bootstrap.Toast(toastEl, { delay: 5000 }); // auto-hide after 5s
+              toast.show();
+            });
+        </script>
+}
+
+
+
+
+<div class="top-0 bottom-0 start-0 end-0 position-absolute" style="background-color: rgba(225,225,255,0.7); z-index:100; display: none; justify-content: center; align-items: center" id="DeletionConfirmation">
+    <div class="w-25 h-25 d-flex justify-content-center align-items-center flex-column w-75 rounded-4" style="background-color: rgba(0,0,0,0.5)">
+        <h3 class="w-100 text-center" id="deletingHeader"></h3>
+        <div class="d-flex justify-content-evenly align-items-center mt-3 w-50">
+            <button class="btn btn-light" onclick="DeleteAlertCancle();">Cancel</button>
+            <button class="btn btn-danger" id='delete'>Delete</button>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+
+
+function DeleteConfirmation(deleteKey)
+{
+        window.scrollTo(0, 0);
+        document.body.style.height = "100vh";
+        document.body.style.overflow = "hidden";
+        document.getElementById('deletingHeader').innerHTML = `Are you sure you want to delete the @Model.Mode (${deleteKey}) ?`;
+        document.getElementById('DeletionConfirmation').style.display='flex';
+        document.getElementById('delete').addEventListener('click', () => {
+        window.location.href = `/@Model.ControllerName/@Model.ActionName?@Model.ParameterName=${deleteKey}`;
+        });
+}
+
+function DeleteAlertCancle()
+{
+   document.body.style.height = "auto";
+   document.body.style.overflow = "auto";
+   document.getElementById('DeletionConfirmation').style.display='none';
+
+}
+
+</script>

@@ -1,145 +1,106 @@
-[{
-        "Name": "Double Caramel Frappuccino",
-        "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-        "Price": 200,
-        "PictureURL": "images/products/sb-ang1.png",
-        "CategoryID": 1,
-        "BrandID": 1
-    },
-    {
-        "Name": "White Chocolate Mocha Frappuccino",
-        "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-        "Price": 150,
-        "PictureURL": "images/products/sb-ang2.png",
-        "CategoryID": 1,
-        "BrandID": 1
-    },
-    {
-        "Name": "Iced Cafe Latte",
-        "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-        "Price": 180,
-        "PictureURL": "images/products/sb-core1.png",
-        "CategoryID": 2,
-        "BrandID": 1
-    },
-    {
-        "Name": "White Chocolate Mocha",
-        "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-        "Price": 300,
-        "PictureURL": "images/products/sb-core2.png",
-        "CategoryID": 3,
-        "BrandID": 2
-    },
-    {
-        "Name": "Iced Caramel Macchiato",
-        "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-        "Price": 250,
-        "PictureURL": "images/products/sb-react1.png",
-        "CategoryID": 4,
-        "BrandID": 1
-    },
-    {
-        "Name": "Hot Caramel Macchiato",
-        "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-        "Price": 120,
-        "PictureURL": "images/products/sb-ts1.png",
-        "CategoryID": 4,
-        "BrandID": 5
-    },
-    {
-        "Name": "Iced Matcha Latte",
-        "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-        "Price": 10,
-        "PictureURL": "images/products/hat-core1.png",
-        "CategoryID": 5,
-        "BrandID": 2
-    },
-    {
-        "Name": "Honey Cake",
-        "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-        "Price": 8,
-        "PictureURL": "images/products/hat-react1.png",
-        "CategoryID": 6,
-        "BrandID": 1
-    },
-    {
-        "Name": "Blueberry Cheesecake",
-        "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-        "Price": 15,
-        "PictureURL": "images/products/hat-react2.png",
-        "CategoryID": 6,
-        "BrandID": 1
-    },
-    {
-        "Name": "Glazed Donuts",
-        "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-        "Price": 18,
-        "PictureURL": "images/products/glove-code1.png",
-        "CategoryID": 7,
-        "BrandID": 3
-    },
-    {
-        "Name": "Greek Salad",
-        "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-        "Price": 15,
-        "PictureURL": "images/products/glove-code2.png",
-        "CategoryID": 7,
-        "BrandID": 1
-    },
-    {
-        "Name": "Purple React Gloves",
-        "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-        "Price": 16,
-        "PictureURL": "images/products/glove-react1.png",
-        "CategoryID": 4,
-        "BrandID": 4
-    },
-    {
-        "Name": "Green React Gloves",
-        "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-        "Price": 14,
-        "PictureURL": "images/products/glove-react2.png",
-        "CategoryID": 4,
-        "BrandID": 4
-    },
-    {
-        "Name": "Redis Red Boots",
-        "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-        "Price": 250,
-        "PictureURL": "images/products/boot-redis1.png",
-        "CategoryID": 3,
-        "BrandID": 6
-    },
-    {
-        "Name": "Core Red Boots",
-        "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-        "Price": 189.99,
-        "PictureURL": "images/products/boot-core2.png",
-        "CategoryID": 3,
-        "BrandID": 2
-    },
-    {
-        "Name": "Core Purple Boots",
-        "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-        "Price": 199.99,
-        "PictureURL": "images/products/boot-core1.png",
-        "CategoryID": 3,
-        "BrandID": 2
-    },
-    {
-        "Name": "Angular Purple Boots",
-        "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-        "Price": 150,
-        "PictureURL": "images/products/boot-ang2.png",
-        "CategoryID": 3,
-        "BrandID": 1
-    },
-    {
-        "Name": "Angular Blue Boots",
-        "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-        "Price": 180,
-        "PictureURL": "images/products/boot-ang1.png",
-        "CategoryID": 3,
-        "BrandID": 1
-    }
+[
+  {
+    "Name": "Double Caramel Frappuccino",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 200,
+    "PictureURL": "images/products/_0_DoubleCaramelFrappuccino.jpg",
+    "CategoryID": 1,
+    "BrandID": 1
+  },
+  {
+    "Name": "White Chocolate Mocha Frappuccino",
+    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Price": 150,
+    "PictureURL": "images/products/_1_WhiteChocolateMochaFrappuccino.jfif",
+    "CategoryID": 1,
+    "BrandID": 1
+  },
+  {
+    "Name": "Iced Cafe Latte",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 180,
+    "PictureURL": "images/products/_2_IcedCafeLatte.jfif",
+    "CategoryID": 2,
+    "BrandID": 1
+  },
+  {
+    "Name": "White Chocolate Mocha",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 300,
+    "PictureURL": "images/products/_3_WhiteChocolateMocha.jfif",
+    "CategoryID": 3,
+    "BrandID": 2
+  },
+  {
+    "Name": "Iced Caramel Macchiato",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 250,
+    "PictureURL": "images/products/_4_IcedCaramelMacchiato.jfif",
+    "CategoryID": 4,
+    "BrandID": 1
+  },
+  {
+    "Name": "Hot Caramel Macchiato",
+    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Price": 120,
+    "PictureURL": "images/products/_5_HotCaramelMacchiato.jfif",
+    "CategoryID": 4,
+    "BrandID": 5
+  },
+  {
+    "Name": "Iced Matcha Latte",
+    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 10,
+    "PictureURL": "images/products/_6_IcedMatchaLatte.jfif",
+    "CategoryID": 5,
+    "BrandID": 1
+  },
+  {
+    "Name": "Honey Cake",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 8,
+    "PictureURL": "images/products/_7_HoneyCake.jfif",
+    "CategoryID": 6,
+    "BrandID": 1
+  },
+  {
+    "Name": "Blueberry Cheesecake",
+    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 15,
+    "PictureURL": "images/products/_8_BlueberryCheesecake.jfif",
+    "CategoryID": 6,
+    "BrandID": 1
+  },
+  {
+    "Name": "Glazed Donuts",
+    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Price": 18,
+    "PictureURL": "images/products/_9_GlazedDonuts.jfif",
+    "CategoryID": 7,
+    "BrandID": 3
+  },
+  {
+    "Name": "Greek Salad",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 15,
+    "PictureURL": "images/products/_10_Greeksalad.jfif",
+    "CategoryID": 7,
+    "BrandID": 1
+  },
+  {
+    "Name": "Turkey Cheese Croissant",
+    "Description": "Delicious turkey, sautéed mushroom served with cheesy mix of cheddar, kashkawan and halloumi enveloped in our flaky signature croissant.",
+    "Price": 15,
+    "PictureURL": "images/products/_11_TurkeyCheeseCroissant.jfif",
+    "CategoryID": 5,
+    "BrandID": 1
+  },
+  {
+    "Name": "Marble Loaf Cake",
+    "Description": "A classic treat of sweet loaf cake in a marbled flavor of vanilla and chocolate.",
+    "Price": 15,
+    "PictureURL": "images/products/_12_MarbleLoafCake.jfif",
+    "CategoryID": 6,
+    "BrandID": 1
+  }
 ]
