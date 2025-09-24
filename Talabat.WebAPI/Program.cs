@@ -103,14 +103,15 @@ namespace Talabat.WebAPI
                 StoreContext context = serviceProvider.GetRequiredService<StoreContext>();
                 ApplicationIdentityContext IdentityContext = serviceProvider.GetRequiredService<ApplicationIdentityContext>();
                 UserManager<ApplicationUser> userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+                RoleManager<IdentityRole> roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 ILoggerFactory loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
 
                 try
                 {
                     context.Database.Migrate();
-                    DataSeeder.Seed(context);
                     IdentityContext.Database.Migrate();
-                    await IdentitySeeder.Seed(userManager);
+                    DataSeeder.Seed(context);
+                    await IdentitySeeder.Seed(userManager, roleManager, IdentityContext);
                 }
                 catch (Exception ex)
                 {

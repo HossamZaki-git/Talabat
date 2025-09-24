@@ -1,0 +1,17 @@
+﻿@{
+    @model HomeVM
+    ViewData["Title"] = "Home";
+}
+
+<div class="d-flex justify-content-center align-items-center h-75 bg-light text-dark position-absolute start-50 top-50 translate-middle w-50">
+    <div class="card shadow-lg p-4 w-75">
+        <div class="card-body text-center ">
+            <h5 class="card-title mb-4 fs-3">Dashboard Summary</h5>
+            <ul class="list-unstyled">
+                <li><h6 class="fs-3">👥 Users: <span class="fw-bold">@Model.NumberOfUsers</span></h6></li>
+                <li><h6 class="fs-3">🔐 Roles: <span class="fw-bold">@Model.NumberOfRoles</span></h6></li>
+                <li><h6 class="fs-3">🛒 Products: <span class="fw-bold">@Model.NumberOfProducts</span></h6></li>
+            </ul>
+        </div>
+    </div>
+</div>

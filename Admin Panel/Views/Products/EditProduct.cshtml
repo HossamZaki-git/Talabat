@@ -1,0 +1,99 @@
+﻿@using Admin_Panel.Models.ProductsVMs
+@using Talabat.Core
+@using Talabat.Core.Domain_Models
+@model ProductEditVM
+
+@{
+    ViewData["Title"] = "Edit Product";
+
+    @inject IUnitOfWork unitOfWork;
+
+    var Brands = await unitOfWork.Repository<Brand>().GetAllAsync();
+    var Categories = await unitOfWork.Repository<Category>().GetAllAsync();
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Edit Product</h2>
+
+    <!-- General Validation Summary -->
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+    <!-- Image Preview -->
+    <div class="text-center mb-4">
+        <img id="previewImage" src="https://localhost:7092/@Model.PictureURL" alt="@Model.Name" class="img-thumbnail" style="max-height: 200px;" />
+    </div>
+
+    <form asp-action="EditProduct" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="ID" />
+        <input type="hidden" asp-for="PictureURL" />
+
+        <!-- Image Upload -->
+        <div class="mb-3">
+            <label asp-for="ImageFile" class="form-label">Upload New Image</label>
+            <input asp-for="ImageFile" type="file" class="form-control" onchange="previewSelectedImage(this)" />
+        </div>
+
+        <!-- Name -->
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Product Name</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <!-- Price -->
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Price</label>
+            <input asp-for="Price" class="form-control" type="number" step="0.01" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <!-- Category Dropdown -->
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select id="category" name="CategoryID" class="form-select">
+                @foreach (var category in Categories)
+                {
+                    <option value="@category.ID" selected="@(category.ID == Model.CategoryID ? "selected" : null)">
+                        @category.Name
+                    </option>
+                }
+            </select>
+        </div>
+
+        <!-- Brand Dropdown -->
+        <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <select id="brand" name="BrandID" class="form-select">
+                @foreach (var brand in Brands)
+                {
+                    <option value="@brand.ID" selected="@(brand.ID == Model.BrandID ? "selected" : null)">
+                        @brand.Name
+                    </option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Save Changes</button>
+    </form>
+</div>
+
+<partial name="_ValidationScriptsPartial" />
+
+<script>
+    function previewSelectedImage(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('previewImage').src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

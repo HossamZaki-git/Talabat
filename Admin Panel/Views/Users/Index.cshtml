@@ -1,0 +1,71 @@
+﻿@model List<UsersVM>
+@{
+    ViewData["Title"] = "Users";
+    MainVM mainVM = new MainVM
+    {
+        Mode = "User",
+        ControllerName = "Users",
+        ActionName = "Delete",
+        ParameterName = "ID"
+    };
+}
+
+@{
+    if (Model.Count != 0)
+    {
+        <table class="table table-striped m-5 text-center">
+            <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Roles</th>
+            <th colspan="2">Actions</th>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var uservm in Model)
+                    {
+                        <tr>
+                            <td>@uservm.Name</td>
+                            <td>@uservm.Email</td>
+                            <td>@uservm.Address</td>
+                            <td>
+                                @if (uservm.Roles.Count != 0)
+                                {
+                                    @string.Join("-", uservm.Roles)
+                                }
+                                else
+                                {
+                                    @string.Concat("-", "-", "-")
+                                }
+                            </td>
+                            <td><a class="btn btn-warning" asp-action="EditUser" asp-route-ID="@uservm.ID"><i class="fa-solid fa-pen-to-square me-1"></i>Edit</a></td>
+                            <td>
+                                <button class="btn btn-danger" onclick="DeleteConfirmation('@uservm.ID')">
+                                    <i class="fa-solid fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <div class="w-100 d-flex justify-content-center align-items-center">
+            <a class="btn btn-info" asp-action="UserCreation">Add New User</a>
+        </div>
+    }
+    else
+    {
+        <div class="d-flex justify-content-center align-items-center min-vh-100 bg-light text-dark">
+            <div class="card shadow-lg p-4 text-center" style="width: 350px;">
+                <div class="card-body">
+                    <h5 class="card-title mb-3 fs-4">No Users Found</h5>
+                    <p class="text-muted">There are currently no user records available.</p>
+                    <a asp-action="UserCreation" class="btn btn-primary w-75">Create User</a>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+<partial name="Main_partial" model="mainVM"/>

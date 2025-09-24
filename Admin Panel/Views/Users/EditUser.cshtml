@@ -1,0 +1,105 @@
+﻿@{
+@model UserEditVM
+    ViewData["Title"] = "UserEdit";
+}
+
+<form asp-action="EditUser" class="p-4 shadow-lg rounded bg-light">
+    <h4 class="mb-4 text-primary text-center">
+        <i class="fa fa-user-edit me-2"></i>Edit User
+    </h4>
+
+    <!-- Validation Summary -->
+    <div asp-validation-summary="All" class="alert alert-danger fw-bold" role="alert"></div>
+
+    <input asp-for="ID" hidden />
+
+    <!-- First Name -->
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label fw-bold"></label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fa fa-user"></i></span>
+            <input class="form-control" placeholder="Enter first name" asp-for="FirstName" />
+        </div>
+        <span asp-validation-for="FirstName" class="text-danger fw-bold"></span>
+    </div>
+
+    <!-- Last Name -->
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label fw-bold"></label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fa fa-user"></i></span>
+            <input class="form-control" placeholder="Enter last name" asp-for="LastName" />
+        </div>
+        <span asp-validation-for="LastName" class="text-danger fw-bold"></span>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label fw-bold"></label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+            <input class="form-control" placeholder="Enter email address" asp-for="Email" />
+        </div>
+        <span asp-validation-for="Email" class="text-danger fw-bold"></span>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label fw-bold"></label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+            <input type="password" class="form-control" placeholder="Enter password" asp-for="Password" />
+        </div>
+        <span asp-validation-for="Password" class="text-danger fw-bold"></span>
+    </div>
+
+    <!-- Street -->
+    <div class="mb-3">
+        <label asp-for="Street" class="form-label fw-bold"></label>
+        <input class="form-control" placeholder="Street" asp-for="Street" />
+        <span asp-validation-for="Street" class="text-danger fw-bold"></span>
+    </div>
+
+    <!-- City -->
+    <div class="mb-3">
+        <label asp-for="City" class="form-label fw-bold"></label>
+        <input class="form-control" placeholder="City" asp-for="City" />
+        <span asp-validation-for="City" class="text-danger fw-bold"></span>
+    </div>
+
+    <!-- Country -->
+    <div class="mb-4">
+        <label asp-for="Country" class="form-label fw-bold"></label>
+        <input class="form-control" placeholder="Country" asp-for="Country" />
+        <span asp-validation-for="Country" class="text-danger fw-bold"></span>
+    </div>
+
+
+    <p class="fw-bold">Roles:</p>
+
+    @for(int i = 0; i < Model.isInRole.Count; i++)
+    {
+        <div class="form-check">
+            @* Setting the name of the role in the sent data *@
+            <input type="hidden" name="isInRole[@i].First" value="@Model.isInRole[i].First"/>
+            <input class="form-check-input" type="checkbox" value="true" name="isInRole[@i].Second" id="@i" @(Model.isInRole[i].Second ? "checked" : "")>
+            <label class="form-check-label" for="@i">
+                @Model.isInRole[i].First
+            </label>
+        </div>
+    }
+
+    <!-- Submit Button -->
+    <div class="d-grid mt-5">
+        <button type="submit" class="btn btn-success btn-lg">
+            <i class="fa fa-save me-2"></i>Save Changes
+        </button>
+    </div>
+
+</form>
+
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

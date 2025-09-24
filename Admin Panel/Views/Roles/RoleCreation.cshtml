@@ -1,0 +1,22 @@
+﻿@using Admin_Panel.Utilities
+@{
+    @model RoleCreation_VM
+    ViewData["Title"] = "Role Creation";
+}
+
+<form class="d-flex justify-content-center align-items-center min-vh-100 bg-light text-dark" asp-action="RoleCreation" method="post">
+    <div class="card shadow-lg p-4 text-center" style="width: 350px;">
+        <div class="card-body d-flex flex-column">
+            <input class="form-control text-center" placeholder="Role Name" asp-for="RoleName"/>
+            <span asp-validation-for="RoleName" class="text-danger fw-bold"></span>
+            <partial name="Privileges_partial" model="@Model"/>
+            <button class="btn btn-primary mt-4">Create</button>
+           <div asp-validation-summary="All" class="text-danger mt-3 fw-bold"></div>
+        </div>
+    </div>
+</form>
+
+@section Scripts 
+{
+    <partial name="_ValidationScriptsPartial" />
+}

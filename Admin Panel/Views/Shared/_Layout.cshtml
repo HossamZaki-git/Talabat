@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin_Panel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Admin_Panel.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css"/>
+    <link rel = "stylesheet" href="~/css/Navbar.css"/>
+    <style>
+        .user-info-box {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .username {
+            font-weight: 600;
+            color: #343a40;
+        }
+
+        .logout-link {
+            text-decoration: none;
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+            .logout-link:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+   
+    <div class="user-info-box">
+            <span class="username">👤 @User.Identity.Name</span>
+        <a class="logout-link" asp-area="" asp-controller="Account" asp-action="SignOut">SignOut</a>
+    </div>
+
+    <nav>
+        <ul>
+            <a asp-controller="Home" asp-action="Index">
+            <li>
+                <div class="home-icon">
+                    <div class="roof">
+                        <div class="roof-edge"></div>
+                    </div>
+                    <div class="front"></div>
+                </div>
+            </li>
+            </a>
+            
+            <li onclick="window.location.href='/Roles/Index';">
+                <div class="about-icon">
+                    <i class="fa-solid fa-elevator h-100" style="width:50%;"></i>
+                </div>
+            </li>
+
+            <li onclick="window.location.href='/Users/Index';">
+                <div class="work-icon">
+                    <i class="fa-solid fa-users h-100" style="width:50%;"></i>
+                </div>
+            </li>
+            <li onclick="window.location.href='/Products/Index';">
+                <div class="mail-icon">
+                    <i class="fa-solid fa-shop h-100" style="width:50%;"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/lib/font-awesome/js/all.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
